@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import DatePicker from '@mui/lab/DatePicker';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import './OrderPlace.css'
 import useAuth from '../../hooks/useAuth';
+import { TextField } from '@mui/material';
 const OrderPlace = () => {
     const [clickToOrder,setClickToOrder]=useState([])
+    const [value,setValue]=useState(null)
     const {user}=useAuth()
     const {id}=useParams()
     const location=useLocation()
@@ -64,12 +69,22 @@ const OrderPlace = () => {
       <input   {...register("address")} />
       <br />
       <label>Contact:</label>
-      <input type="string" {...register("contact number")} />
+      <input type="string" {...register("contactnumber")} />
       <br />
       <label>Ordered Item:</label>
       <input defaultValue={clickToOrder?.name} {...register("orderedfoodname")} />
       <br />
-     
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+  <DatePicker
+    label="date"
+    value={value}
+    onChange={(newValue) => {
+      setValue(newValue);
+    }}
+    renderInput={(params) => <TextField {...params} />}
+  />
+</LocalizationProvider>
+<br />
       <label>Quantity:</label>
       <input type="number" {...register("quantity")} />
       <br />
