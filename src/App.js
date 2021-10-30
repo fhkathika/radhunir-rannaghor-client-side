@@ -5,11 +5,12 @@ import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import NavBaar from './page/Shared/Header/NavBaar';
 import initializeApplication from './page/Firebase/fireebase.init';
 import Login from './page/Login/Login';
-import Home from './page/Home/Home';
 import AuthProvider from './page/Context/AuthProvider';
 import MyOrder from './page/MyOrder/MyOrder';
 import ManageOrders from './page/ManageOrders/ManageOrders';
 import AddNewService from './page/AddNewService/AddNewService';
+import Home from './page/Home/Home';
+import OrderPlace from './page/Home/OrderPlace/OrderPlace';
 
 function App() {
 initializeApplication()
@@ -38,6 +39,13 @@ initializeApplication()
 <Route path='/addnewservice'>
        <AddNewService></AddNewService>
         </Route>
+<Route path='/orderplace/:id'>
+       <OrderPlace></OrderPlace>
+        </Route>
+<Route path='/addnewservice'>
+       <AddNewService></AddNewService>
+        </Route>
+
       </Switch>
       </BrowserRouter>
      </AuthProvider>

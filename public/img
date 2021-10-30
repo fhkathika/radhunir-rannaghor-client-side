@@ -1,16 +1,56 @@
-https://i.ibb.co/SyHzz07/baby-sweet.jpg" 
+[
+    {
+        "name":"Nachos",
+        "img" :"https://i.ibb.co/y8FXzHM/nachos.jpg",
+        "detail" :"Nachos are a Mexican regional dish from northern Mexico that consists of heated tortilla chips or totopos covered with melted cheese, often served as a snack or appetizer. More elaborate versions of the dish include other ingredients, and may be substantial enough to serve as a main dish.",
+        "price" :150
+    },
+    {
+        "name":"Zarda",
+        "img" :"https://i.ibb.co/KXvvGr9/jorda.jpg",
+        "detail" :"Zarda is a traditional boiled sweet rice dish, native to the Indian subcontinent, made with saffron, milk and sugar, and flavoured with cardamoms, raisins, pistachios or almonds.",
+        "price" :300
+    },
+    {
+        "name":"Chaowmin",
+        "img" :"https://i.ibb.co/HPKMKdd/chawmin2",
+        "detail" :" a seasoned stew of shredded or diced meat, mushrooms, and vegetables that is usually served with fried noodles." ,
+        "price":170
+    },
+    {
+        "name":"Set Menu",
+        "img" :"https://i.ibb.co/6R3Jn64/setmenu.jpg",
+        "detail" :"A set menu is a menu with a specific set of meals to choose from. The price charged for each meal is the same. ... Our set menu is offered alongside the à la carte menu. There is a wide choice of meals on the set menu.",
+        "price" :200
+    },
+    {
+        "name":"Shorma",
+        "img" :"https://i.ibb.co/KNfbfN1/shorma.jpg",
+        "detail" :"Shawarma is a popular Levantine Arab dish consisting of meat cut into thin slices, stacked in a cone-like shape, and roasted on a slowly-turning vertical rotisserie or spit. Originally made with lamb, mutton or chicken, today's shawarma may also be turkey, beef, or veal.",
+        "price" :120
+    },
+    {
+        "name":"Chotpoti",
+        "img" :"https://i.ibb.co/FgCZJdR/chopoti2.jpg",
+        "detail" :"Chotpoti, is a Bengali street food mostly popular in Bangladesh and West Bengal, along with other urban areas. The word chotpoti, translates to 'spicy.' The dish consists mainly of potatoes, chickpeas, and onions and is usually topped with additional diced chillies or grated boiled eggs.",
+        "price" :150
+    }
+]
+
+
+# https://i.ibb.co/SyHzz07/baby-sweet.jpg" 
 https://i.ibb.co/WfyLf5W/beef-Biriyani.jpg"
-https://i.ibb.co/LNLGqx4/chaowmin.jpg" 
-https://i.ibb.co/HPKMKdd/chawmin2.jpg" 
+# https://i.ibb.co/LNLGqx4/chaowmin.jpg" 
+# https://i.ibb.co/HPKMKdd/chawmin2.jpg" 
 https://i.ibb.co/FgCZJdR/chopoti2.jpg" 
 https://i.ibb.co/0mD1m7p/chopoti3.jpg" 
 https://i.ibb.co/P1KF4VR/chotpoti.jpg" 
-https://i.ibb.co/KXvvGr9/jorda.jpg" 
+# https://i.ibb.co/KXvvGr9/jorda.jpg" 
 https://i.ibb.co/cDvQz9m/kabab.jpg" 
 https://i.ibb.co/S7wGxGh/momo.jpg"
 https://i.ibb.co/NL6db71/momo2.jpg" 
 https://i.ibb.co/y8FXzHM/nachos.jpg" 
-https://i.ibb.co/bHbN7Jh/nachos3.jpg" 
+# https://i.ibb.co/bHbN7Jh/nachos3.jpg" 
 https://i.ibb.co/GWzw9Sx/package.jpg" 
 https://i.ibb.co/6R3Jn64/setmenu.jpg" 
 https://i.ibb.co/rZ4ZCb5/setmenu2.jpg"
