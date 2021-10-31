@@ -5,6 +5,7 @@ import initializeApplication from "../Firebase/fireebase.init";
 initializeApplication()
 const useFirebase=()=> {
     const [user,setUser]=useState()
+    const [orderDelete,setOrderDelete]=useState()
     const auth = getAuth();
     const googleProvider=new GoogleAuthProvider();
  const [isLoading,setIsLoading]=useState(true)
@@ -46,7 +47,9 @@ return{
     signInUsingGoogle,
     user,
     LogOut,
-    isLoading
+    isLoading,
+    orderDelete,
+    setOrderDelete
 }
 
 }

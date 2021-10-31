@@ -5,27 +5,37 @@ import './MyOrder.css'
 import SingleOrder from './SingleOrder/SingleOrder';
 const MyOrder = () => {
     const {user}=useAuth()
-   
+    const {orderDelete,setOrderDelete}=useAuth()
     const [userorder,setUserorder]=useState([])
+
     
     useEffect(()=>{
         fetch(`https://radiant-fjord-34383.herokuapp.com/getmyorder/${user?.email}`)
         .then(res => res.json())
         .then(data=> setUserorder(data))
-    },[user?.email])
+    },[user?.email,orderDelete])
+
+    
     return (
+        
         <div>
             <h1>MyOrder</h1>
             <div className="myorder"> 
+          
         {
+         
             userorder.map(order => <SingleOrder 
                 key={order._id}
                 order={order}
+             
+               
             ></SingleOrder>)
+            
         }
           </div>  
         </div>
+      
     );
 };
 
-export default MyOrder;
+export default MyOrder

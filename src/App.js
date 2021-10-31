@@ -11,6 +11,7 @@ import ManageOrders from './page/ManageOrders/ManageOrders';
 import AddNewService from './page/AddNewService/AddNewService';
 import Home from './page/Home/Home';
 import OrderPlace from './page/Home/OrderPlace/OrderPlace';
+import PrivateRoute from './page/PrivateRoute/PrivateRoute';
 
 function App() {
 initializeApplication()
@@ -39,9 +40,9 @@ initializeApplication()
 <Route path='/addnewservice'>
        <AddNewService></AddNewService>
         </Route>
-<Route path='/orderplace/:id'>
+<PrivateRoute path='/orderplace/:id'>
        <OrderPlace></OrderPlace>
-        </Route>
+        </PrivateRoute>
 <Route path='/addnewservice'>
        <AddNewService></AddNewService>
         </Route>

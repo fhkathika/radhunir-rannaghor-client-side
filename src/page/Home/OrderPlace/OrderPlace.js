@@ -12,8 +12,6 @@ const OrderPlace = () => {
     const [value,setValue]=useState(null)
     const {user}=useAuth()
     const {id}=useParams()
-    const location=useLocation()
-    const history=useHistory()
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = ({_id,name,detail,...rest}) => {
         rest.status="pending"
@@ -34,14 +32,9 @@ const OrderPlace = () => {
           reset()
             // const redirect_url=location.state?.from ||'/home'
             // history.push(redirect_url)
-
-        }
-        else{
-            alert('sorry you cant order')
-        }
-     })
-        
-        console.log(rest)
+}
+         })
+   console.log(rest)
     
     };
     //load data
@@ -91,9 +84,7 @@ const OrderPlace = () => {
       <label>Price:</label>
       <input defaultValue={clickToOrder?.price} type="integer" {...register("price")} />
       <br />
-     
-    
-      <input type="submit" />
+     <input type="submit" />
     </form>
         </div>
     );

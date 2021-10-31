@@ -5,6 +5,23 @@ import './ManageOrders.css'
 const ManageOrders = () => {
     const {user}=useAuth()
     const [allorders,setAllorders]=useState([])
+    const handleDelete=id=>{
+      fetch(`https://radiant-fjord-34383.herokuapp.com/deleteanyoneorder/${id}`,{
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data =>{ console.log('delete button working',data)   
+        if(data.deletedCount>0){
+        alert('deleted successfully')
+      
+        const remainingUser=allorders.filter(userSingleorder=> userSingleorder._id !==id)
+        setAllorders(remainingUser )
+        
+
+      }
+    })
+
+    }
     useEffect(()=>{
         fetch('https://radiant-fjord-34383.herokuapp.com/confirmorder')
         .then(res => res.json())
@@ -25,8 +42,9 @@ const ManageOrders = () => {
       <th>Order Item</th>
       <th>Order Price</th>
      
-    <th>Action</th>
       <th>Status</th>
+      
+    <th>Action</th>
     </tr>
   </thead>
   {
@@ -39,8 +57,10 @@ const ManageOrders = () => {
       <td>{allorder.contactnumber}</td>
       <td>{allorder.orderedfoodname}</td>
       <td>{allorder.price}</td>
-      <td>delete</td>
+      
       <td>{allorder.status}</td>
+      <td><input type="button" value="Delete"onClick={()=>handleDelete(allorder._id)}/>Delete</td>
+
     </tr>
   
   </tbody> )
