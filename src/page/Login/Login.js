@@ -16,8 +16,9 @@ const Login = () => {
     }
 
     return (
-        <div>
-          <button onClick={handlesignInUsingGoogle}>Google Sign in</button>
+        <div style={{border:'1px solid red',height:'500px' }}  >
+          <h1>Log In please</h1>
+          <button style={{backgroundColor:'goldenrod'}} className='m-5 p-3' onClick={handlesignInUsingGoogle}>Google Sign in</button>
         </div>
     );
 };

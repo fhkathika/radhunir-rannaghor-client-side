@@ -12,6 +12,7 @@ import AddNewService from './page/AddNewService/AddNewService';
 import Home from './page/Home/Home';
 import OrderPlace from './page/Home/OrderPlace/OrderPlace';
 import PrivateRoute from './page/PrivateRoute/PrivateRoute';
+import Footer from './page/Shared/Footer/Footer';
 
 function App() {
 initializeApplication()
@@ -31,9 +32,9 @@ initializeApplication()
         <Route  path='/login'>
   <Login></Login>
 </Route>
-<Route path='/myorder'>
+<PrivateRoute path='/myorder'>
         <MyOrder></MyOrder>
-        </Route>
+        </PrivateRoute>
 <Route path='/manageallorder'>
         <ManageOrders></ManageOrders>
         </Route>
@@ -48,6 +49,7 @@ initializeApplication()
         </Route>
 
       </Switch>
+      <Footer></Footer>
       </BrowserRouter>
      </AuthProvider>
     </div>

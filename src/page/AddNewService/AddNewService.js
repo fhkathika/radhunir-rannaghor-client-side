@@ -1,10 +1,14 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useRef, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
+import useAuth from '../hooks/useAuth';
 import './AddNewService.css'
 
 const AddNewService = () => {
   const [adduser,setAdduser]=useState([])
+ const location=useLocation()
+ const history=useHistory()
  const nameRef=useRef()
  const detailRef=useRef()
  const imgRef=useRef()
@@ -27,14 +31,23 @@ const handleAdduser=e=>{
       },body : JSON.stringify(addNewUser)
     })
     .then(res => res.json())
-    .then(data => setAdduser(data))
+    .then(data =>{
+      if(data.insertedId){
+        alert('added successfull')
+        setAdduser(data)
+     
+        const redirect_url=location.state?.from ||'/home'
+            history.push(redirect_url)
+          
+}
+    } )
 }
 
     return (
-        <div>
+        <div className='adduser-form'>
             <h1>AddNewService</h1>
-            <div className='mx-auto w-75'>
-            <form onSubmit={handleAdduser}>
+            <div className='mx-auto w-100'>
+            <form  onSubmit={handleAdduser}>
 
                <label>Item Name: </label> <input className="w-50 m-3 m-3 p-2" type="text" ref={nameRef} placeholder="enter name" />
                <br />

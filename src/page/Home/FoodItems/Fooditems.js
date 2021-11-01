@@ -1,3 +1,5 @@
+import { Grid } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import './Fooditems.css'
 import SingleItem from './SingleItem/SingleItem';
@@ -9,15 +11,27 @@ const Fooditems = () => {
         .then(data =>setItem(data))
     },[])
     return (
-        <div>
-            <h1> Food Items</h1>
-            <div className="food-items"> 
-            {
-                items.map(item=> <SingleItem key={item._id} item={item}></SingleItem>)
+        <div className='food-items  '>
+
+            <h1 style={{margin:'3%'}}> Food Items</h1>
+            <Box sx={{ flexGrow: 1 }}>
+      <Grid  container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    
+       {
+          
+             items.map(item=> <SingleItem key={item._id} item={item}></SingleItem>)
+       
+              
             }
-            </div>
-           
+               </Grid>
+    
+    </Box>
+            {/* <div className="food-items " > 
+            
+            </div> */}
+           <hr />
         </div>
+        
     );
 };
 

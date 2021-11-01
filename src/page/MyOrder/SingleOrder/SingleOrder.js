@@ -2,7 +2,7 @@ import { borderRadius } from '@mui/system';
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
-import MyOrder from '../MyOrder';
+
 
 import './SingleOrder.css'
 const SingleOrder = ({order}) => {
@@ -37,17 +37,17 @@ const {setOrderDelete}=useAuth()
     }
     
     return (
-        <div>
+        <div className='card-style'>
             <div className="card-img">
             <Card.Img variant="top" src={img} style={{ width: '30%', borderRadius:'10px' }} />
             <Card style={{ width: '18rem' }}>
  
   <Card.Body>
-    <Card.Title>{orderedfoodname}</Card.Title>
+    <Card.Title style={{backgroundColor:'yellowrod',color:'white'}} >{orderedfoodname}</Card.Title>
     <h3>Price:{price}</h3>
     <p>Status: {status}</p>
     <p>Quantity: {quantity}</p>
-    <button onClick={()=>  handledeleteMyorder(_id)}>Cancel Order</button>
+    <button style={{backgroundColor:'firebrick',color:'white',borderRadius:'5px'}} onClick={()=>  handledeleteMyorder(_id)}>Cancel Order</button>
   </Card.Body>
 </Card>
 </div>

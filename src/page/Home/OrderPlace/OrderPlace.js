@@ -12,6 +12,8 @@ const OrderPlace = () => {
     const [value,setValue]=useState(null)
     const {user}=useAuth()
     const {id}=useParams()
+    const history=useHistory()
+    const location=useLocation()
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = ({_id,name,detail,...rest}) => {
         rest.status="pending"
@@ -30,8 +32,8 @@ const OrderPlace = () => {
           alert('order successfull')
           reset(restdata)
           reset()
-            // const redirect_url=location.state?.from ||'/home'
-            // history.push(redirect_url)
+            const redirect_url=location.state?.from ||'/home'
+            history.push(redirect_url)
 }
          })
    console.log(rest)
@@ -51,23 +53,24 @@ const OrderPlace = () => {
     return (
         <div>
             <h1>Place Your Order</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
-      <label>username:</label>
-      <input defaultValue={user?.displayName} {...register("username")} />
+            <form className='form w-75 mx-auto' xs={8} onSubmit={handleSubmit(onSubmit)}>
+      <label>username: </label>
+      <input className='m-3 p-2' defaultValue={user?.displayName} {...register("username")} />
       <br />
-      <label>Email:</label>
-      <input defaultValue={user?.email} {...register("email")} />
+      <label>Email: </label>
+      <input className='m-3 p-2' defaultValue={user?.email} {...register("email")} />
       <br />
-      <label>Address:</label>
-      <input   {...register("address")} />
+      <label>Address: </label>
+      <input  className='m-3 p-2'  {...register("address")} />
       <br />
-      <label>Contact:</label>
-      <input type="string" {...register("contactnumber")} />
+      <label>Contact: </label>
+      <input className='m-3 p-2' type="string" {...register("contactnumber")} />
       <br />
-      <label>Ordered Item:</label>
-      <input defaultValue={clickToOrder?.name} {...register("orderedfoodname")} />
+      <label>Ordered Item: </label>
+      <input className='m-3 p-2' defaultValue={clickToOrder?.name} {...register("orderedfoodname")} />
       <br />
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <label>Date: </label>
+      <LocalizationProvider className='m-3 p-2' dateAdapter={AdapterDateFns}>
   <DatePicker
     label="date"
     value={value}
@@ -78,13 +81,13 @@ const OrderPlace = () => {
   />
 </LocalizationProvider>
 <br />
-      <label>Quantity:</label>
-      <input type="number" {...register("quantity")} />
+      <label>Quantity: </label>
+      <input className='m-3 p-2' type="number" {...register("quantity")} />
       <br />
-      <label>Price:</label>
-      <input defaultValue={clickToOrder?.price} type="integer" {...register("price")} />
+      <label>Price: </label>
+      <input className='m-3 p-2' defaultValue={clickToOrder?.price} type="integer" {...register("price")} />
       <br />
-     <input type="submit" />
+     <input className='m-3 p-2 bg-danger' type="submit" />
     </form>
         </div>
     );

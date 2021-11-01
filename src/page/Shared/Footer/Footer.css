@@ -1,0 +1,12 @@
+.footer{
+    background-color: firebrick;
+    padding: 5%;
+}
+.footer-icon{
+    padding: 2%;
+    margin: 10px;
+}
+.footer-position{
+    position: sticky;
+
+}
