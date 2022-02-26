@@ -6,7 +6,8 @@ import DatePicker from '@mui/lab/DatePicker';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import './OrderPlace.css'
 import useAuth from '../../hooks/useAuth';
-import { TextField } from '@mui/material';
+import { Container, TextField } from '@mui/material';
+import { Col, Row } from 'react-bootstrap';
 const OrderPlace = () => {
     const [clickToOrder,setClickToOrder]=useState([])
     const [value,setValue]=useState(null)
@@ -15,7 +16,7 @@ const OrderPlace = () => {
     const history=useHistory()
     const location=useLocation()
     const { register, handleSubmit,reset } = useForm();
-    const onSubmit = ({_id,name,detail,...rest}) => {
+    const onSubmit = ({_id,detail,...rest}) => {
         rest.status="pending"
      fetch('https://radiant-fjord-34383.herokuapp.com/confirmorder',{
          method : 'POST',
@@ -51,9 +52,62 @@ const OrderPlace = () => {
     },[reset])
 
     return (
-        <div>
-            <h1>Place Your Order</h1>
-            <form className='form w-75 mx-auto' xs={8} onSubmit={handleSubmit(onSubmit)}>
+        <Container className='small-container my-5 '>
+          
+          <form className='form w-100 mx-auto p-4' xs={12} onSubmit={handleSubmit(onSubmit)}>
+           <h1>Place Your Order</h1>
+    
+    
+          <div className='row'>
+            <Row>
+              <Col sm={12} md={12}>
+                       
+<TextField id="standard-basic" className='mx-5'  defaultValue={user?.displayName}  label="Username" {...register("username")} variant="standard" />
+
+<TextField  id="standard-basic"  defaultValue={user?.email}  label="Email" {...register("email")} variant="standard" />
+              </Col>
+            </Row>
+          <Row className='mt-5'>
+    <Col sm={12} md={4}>
+    <img src={clickToOrder.img} alt="" width='100%' />
+    </Col>
+    <Col sm={12} md={6}>
+ 
+ {/* <h4 {...register("name")} >{clickToOrder?.name}</h4> */}
+ {/* <input  defaultValue={clickToOrder?.name} {...register("name")} /> */}
+ <div className='item-name-price'>
+ <h3  className='w-50 '>{clickToOrder?.name}</h3>
+ <h3 className='w-25 ' >---</h3>
+
+<h4 className='w-50 mt-1 ' >{clickToOrder?.price}tk</h4>
+ </div>
+
+
+<TextField className='w-75' id="standard-basic" label="Quantity" {...register("quantity")} variant="standard" />
+
+<TextField className='w-75' id="standard-basic" label="Address" {...register("address")} variant="standard" />
+
+
+<TextField className='w-75' id="standard-basic" label="Contact number" {...register("contactnumber")} variant="standard" />
+
+</Col>
+  </Row>
+  <Row>
+  
+    <Col sm>
+    <input className='btn' type="submit" />
+    </Col>
+   
+  </Row>
+            
+           
+        
+      
+          </div>
+         
+    </form>  
+
+            {/* <form className='form w-75 mx-auto' xs={8} onSubmit={handleSubmit(onSubmit)}>
       <label>username: </label>
       <input className='m-3 p-2' defaultValue={user?.displayName} {...register("username")} />
       <br />
@@ -88,8 +142,8 @@ const OrderPlace = () => {
       <input className='m-3 p-2' defaultValue={clickToOrder?.price} type="integer" {...register("price")} />
       <br />
      <input className='m-3 p-2 bg-danger' type="submit" />
-    </form>
-        </div>
+    </form> */}
+        </Container>
     );
 };
 

@@ -77,11 +77,11 @@ const ManageOrders = () => {
       <td>{allorder.username}</td>
       <td>{allorder.email}</td>
       <td>{allorder.contactnumber}</td>
-      <td>{allorder.orderedfoodname}</td>
+      <td>{allorder.name}</td>
       <td>{allorder.price}</td>
       
       <td> <Switch {...label} onClick={()=>handlupdateStatus(allorder._id)} />{allorder.status}</td>
-      <td><input type="button" value="Delete"onClick={()=>handleDelete(allorder._id)}/>Delete</td>
+      <td><input type="button" value="Delete"onClick={()=>handleDelete(allorder._id)}/></td>
 
     </tr>
   

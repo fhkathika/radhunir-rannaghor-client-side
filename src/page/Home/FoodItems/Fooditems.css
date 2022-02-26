@@ -4,3 +4,17 @@
     margin-right: 5%;
     
 }
+.heading{
+    text-align: center; 
+    font-size: 3.5rem;
+    padding: 1rem;
+    color: #666;  
+   }
+   .heading span{
+      color: firebrick; 
+   }
+   .speciality .box-container {
+   
+   gap: 1.5rem;
+   }
+ 

@@ -1,6 +1,28 @@
 .form{
-    border: 1px solid firebrick;
+    border: 1px solid gainsboro;
     border-radius: 10px;
+    box-shadow: 50%;
+    color: rgb(231, 124, 124);
     
-    
+}
+input:focus{
+    outline: none;
+}
+.form .item-name-price{
+    display: flex;
+    margin-top: 25px;
+    margin-left: 35px;
+}
+.row{
+    display: flex;
+}
+.row img{
+ 
+    border-radius: 20px;
+}
+@media only screen and (max-width: 600px) {
+    .row{
+        display: block;
+    }
+   
 }

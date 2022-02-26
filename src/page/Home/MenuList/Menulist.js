@@ -3,8 +3,8 @@ import { Carousel } from 'react-bootstrap';
 import './MenuList.css'
 const Menulist = () => {
     return (
-        <div>
-             <h2>Item Menu List</h2>
+        <section>
+         <h1 className='heading'>Our <span>Menu List</span></h1>
              <Carousel >
   <Carousel.Item>
       <div className="menulist w-50 mx-auto">
@@ -72,7 +72,7 @@ const Menulist = () => {
    </div>
   </Carousel.Item>
 </Carousel>
-        </div>
+        </section>
     );
 };
 

@@ -7,10 +7,11 @@ const NavBaar = () => {
   const {user,LogOut}=useAuth()
     return (
       <>
-      <Navbar  collapseOnSelect expand="lg" variant="light" style={{backgroundColor:'firebrick' , padding:'5px'}}>
+    
+      <Navbar  collapseOnSelect expand="lg" variant="light" style={{backgroundColor:'firebrick' , padding:'10px'}}>
         <Container>
-        <Navbar.Brand as={Link} style={{color:'white' , padding:'5px',border:'1px solid wheat',borderRadius:'20px',fontFamily:'cursive'}}  to="#home"> <h3> Radhunir Rannaghor
-          </h3><small style={{color:'wheat'}}>Food Catering</small></Navbar.Brand>
+        <Navbar.Brand as={Link} style={{color:'white' , padding:'5px'}}  to="#home"> <h3> Radhunir Rannaghor
+          </h3></Navbar.Brand>
        
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -28,9 +29,9 @@ const NavBaar = () => {
          
   {/* login */}
   {
-            user?.email?<button onClick={LogOut}>Log Out</button>
+            user?.email?<Nav.Link onClick={LogOut} style={{color:'wheat' , padding:'10px'}}>Log Out</Nav.Link>
           :
-          <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+          <Nav.Link as={Link} style={{color:'wheat' , padding:'10px'}} to="/login">Log In</Nav.Link>
           }
 
           

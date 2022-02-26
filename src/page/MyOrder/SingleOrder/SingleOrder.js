@@ -9,7 +9,7 @@ const SingleOrder = ({order}) => {
  
 //  const {}=MyOrder()
 const {setOrderDelete}=useAuth()
-    const {_id,orderedfoodname,quantity,status,price,img}=order
+    const {_id,name,quantity,status,price,img}=order
   console.log('order items',order)
     // const [deleteorder,setDeleteorder]=useState()
     const handledeleteMyorder =id=>{
@@ -43,8 +43,10 @@ const {setOrderDelete}=useAuth()
             <Card style={{ width: '18rem' }}>
  
   <Card.Body>
-    <Card.Title style={{backgroundColor:'yellowrod',color:'white'}} >{orderedfoodname}</Card.Title>
-    <h3>Price:{price}</h3>
+    <Card.Title style={{backgroundColor:'yellowrod',color:'black'}} >{name}</Card.Title>
+
+    {/* <h3>Ordered item:{name}</h3> */}
+    <h4>Price:{price}</h4>
     <p>Status: {status}</p>
     <p>Quantity: {quantity}</p>
     <button style={{backgroundColor:'firebrick',color:'white',borderRadius:'5px'}} onClick={()=>  handledeleteMyorder(_id)}>Cancel Order</button>

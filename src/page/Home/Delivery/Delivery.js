@@ -11,8 +11,8 @@ const Delivery = () => {
         color: theme.palette.text.secondary,
       }));
     return (
-        <div className="container-fluid " >
-            <h2>Our Delivery</h2>
+        <section className="container-fluid " >
+       <h1 className='heading'>Our <span>Delivery</span></h1>
            
             <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -72,7 +72,7 @@ const Delivery = () => {
             <img src="https://i.ibb.co/H4MmhTN/delivery2.jpg" alt="" />
           </div> */}
       
-      </div>
+      </section>
      
     );
 };
